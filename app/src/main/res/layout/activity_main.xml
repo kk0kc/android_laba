@@ -4,15 +4,333 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".MainActivity">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/avatar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="10dp"
+        android:padding="5dp"
+        android:scaleType="centerCrop"
+        app:contentPadding="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/circle"
+        app:srcCompat="@drawable/avatar"
+        app:strokeColor="@color/pink"
+
+        app:strokeWidth="3dp" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="120dp"
+        android:text="Kole"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+<!--        app:layout_constraintTop_toBottomOf="@id/avatar" />-->
+
+    <TextView
+        android:id="@+id/bio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="Hi. I'm Kole. I'm big boy at 17 pounds. I have an older brother named King, and I'd loved to be friends!"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name" />
+
+    <TextView
+        android:id="@+id/link"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="glnk.io/zq24/katsrkole"
+        android:textColor="@color/light_blue"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bio" />
+
+    <TextView
+        android:id="@+id/translate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="Показать перевод"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/link" />
+
+    <TextView
+        android:id="@+id/count_publications"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginBottom="40dp"
+        android:text="1 142"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_goneMarginStart="100dp"
+        app:layout_constraintBottom_toTopOf="@id/bio"
+        app:layout_constraintStart_toEndOf="@id/avatar"
+
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_publications"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="65dp"
+        android:text="Публикации"
+        android:textColor="@color/white"
+        app:layout_goneMarginStart="84dp"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toTopOf="@id/bio"
+        app:layout_constraintStart_toEndOf="@id/avatar"
+        app:layout_constraintTop_toBottomOf="@id/count_publications" />
+
+    <TextView
+        android:id="@+id/count_subscribers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="40dp"
+        android:text="37,1 тыс."
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/bio"
+        app:layout_constraintStart_toEndOf="@id/count_publications"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_subscribers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="65dp"
+        android:text="Подписчики"
+        android:textColor="@color/white"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toTopOf="@id/bio"
+        app:layout_constraintStart_toEndOf="@id/text_publications"
+        app:layout_constraintTop_toBottomOf="@id/count_publications" />
+
+    <TextView
+        android:id="@+id/cunt_subscriptions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginBottom="40dp"
+        android:text="3 964"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/bio"
+        app:layout_constraintStart_toEndOf="@id/count_subscribers"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="65dp"
+        android:text="Подписки"
+        android:textColor="@color/white"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toTopOf="@id/bio"
+        app:layout_constraintStart_toEndOf="@id/text_subscribers"
+        app:layout_constraintTop_toBottomOf="@id/count_subscribers" />
+
+    <Button
+        android:id="@+id/subscribe"
+        android:layout_width="150dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="@color/blue_200"
+        android:text="Подписаться"
+        android:textSize="11dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/message"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/translate"
+        app:shapeAppearanceOverlay="@style/rounded_corner" />
+
+    <Button
+        android:id="@+id/message"
+        android:layout_width="150dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="@color/gray"
+        android:text="Сообщение"
+        android:textSize="11dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/edit"
+        app:layout_constraintStart_toEndOf="@id/subscribe"
+        app:layout_constraintTop_toBottomOf="@id/translate"
+        app:shapeAppearanceOverlay="@style/rounded_corner" />
+
+    <Button
+        android:id="@+id/edit"
+        android:layout_width="64dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@color/gray"
+        android:text="Edit"
+        android:textSize="11dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/message"
+        app:layout_constraintTop_toBottomOf="@id/translate"
+        app:shapeAppearanceOverlay="@style/rounded_corner" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/highlights"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_margin="10dp"
+        android:padding="5dp"
+        android:scaleType="centerCrop"
+        app:contentPadding="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/subscribe"
+        app:shapeAppearanceOverlay="@style/circle"
+        app:srcCompat="@drawable/highlights"
+        app:strokeColor="@color/light_gray"
+        app:strokeWidth="2dp" />
+
+    <ImageView
+        android:id="@+id/grid"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="30dp"
+        android:src="@drawable/grid"
+        app:layout_constraintEnd_toStartOf="@id/reels"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/subscribe"
+        app:tint="#FFFFFFFF" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="_______________"
+        android:textColor="@color/white"
+        android:layout_marginTop="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/grid"/>
+
+    <ImageView
+        android:id="@+id/reels"
+        android:layout_width="23dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="102dp"
+        android:layout_marginEnd="30dp"
+        android:src="@drawable/reels"
+        app:layout_constraintEnd_toStartOf="@id/play"
+        app:layout_constraintStart_toEndOf="@id/grid"
+        app:layout_constraintTop_toBottomOf="@id/subscribe"
+        app:tint="@color/light_gray_pro" />
+
+    <ImageView
+        android:id="@+id/play"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="30dp"
+        android:src="@drawable/play_button"
+        app:layout_constraintEnd_toStartOf="@id/user_box"
+        app:layout_constraintStart_toEndOf="@id/reels"
+        app:layout_constraintTop_toBottomOf="@id/subscribe"
+        app:tint="@color/light_gray_pro" />
+
+    <ImageView
+        android:id="@+id/user_box"
+        android:layout_width="29dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/account_box"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/play"
+        app:layout_constraintTop_toBottomOf="@id/subscribe"
+        app:tint="@color/light_gray_pro" />
+
+    <ImageView
+        android:id="@+id/cat1"
+        android:layout_width="132dp"
+        android:layout_height="132dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/cat1"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintEnd_toStartOf="@id/cat2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/grid" />
+
+    <ImageView
+        android:id="@+id/cat2"
+        android:layout_width="132dp"
+        android:layout_height="132dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/cat2"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintEnd_toStartOf="@id/cat3"
+        app:layout_constraintStart_toEndOf="@id/cat1"
+        app:layout_constraintTop_toBottomOf="@id/grid" />
+
+    <ImageView
+        android:id="@+id/cat3"
+        android:layout_width="132dp"
+        android:layout_height="132dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/cat3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/cat2"
+        app:layout_constraintTop_toBottomOf="@id/grid" />
+
+    <ImageView
+        android:id="@+id/cat4"
+        android:layout_width="132dp"
+        android:layout_height="132dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="2dp"
+        android:src="@drawable/cat4"
+        app:layout_constraintEnd_toStartOf="@id/cat5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cat1" />
+    <ImageView
+        android:id="@+id/cat5"
+        android:layout_width="132dp"
+        android:layout_height="132dp"
+        android:layout_marginTop="2dp"
+        android:src="@drawable/cat5"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintEnd_toStartOf="@id/cat6"
+        app:layout_constraintStart_toEndOf="@id/cat4"
+        app:layout_constraintTop_toBottomOf="@id/cat1" />
+    <ImageView
+        android:id="@+id/cat6"
+        android:layout_width="132dp"
+        android:layout_height="132dp"
+        android:layout_marginTop="2dp"
+        android:src="@drawable/cat6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/cat5"
+        app:layout_constraintTop_toBottomOf="@id/cat1" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
