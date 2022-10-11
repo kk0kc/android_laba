@@ -31,10 +31,7 @@ open class ADialogFragment : DialogFragment(R.layout.fragment_dialog) {
                 }
                 .setNegativeButton("ОТМЕНА") {
                         dialog, _ ->
-                    if(binding.textEdit.text.toString().toInt() !in 0..100){
-                        binding.inputLayout.setError("Неверный формат данных")
-                    }
-                    else{dialog.dismiss()}
+                    dialog.dismiss()
                 }
                 .setNeutralButton("ВЫЧЕСТЬ") {
                         dialog, _ ->
