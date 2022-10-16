@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/cover"
+        android:layout_width="90dp"
+        android:layout_margin="12dp"
+        app:shapeAppearanceOverlay="@style/rounded_corner"
+        android:scaleType="centerCrop"
+        android:layout_height="90dp"
+        app:srcCompat="@drawable/def"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_margin="12dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/cover"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:fontFamily="sans-serif-condensed-medium"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintBottom_toTopOf="@id/author"
+        android:text="Song name"/>
+    <TextView
+        android:id="@+id/author"
+        android:layout_width="0dp"
+        android:layout_marginStart="12dp"
+        android:textSize="16sp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/cover"
+        app:layout_constraintTop_toBottomOf="@id/name"
+        android:text="Song Author"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
