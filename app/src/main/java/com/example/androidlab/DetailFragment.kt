@@ -1,6 +1,7 @@
 package com.example.androidlab
 
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
@@ -17,6 +18,7 @@ import com.example.androidlab.databinding.FragmentDetailBinding
 
 class DetailFragment : Fragment(R.layout.fragment_detail) {
     private var binding: FragmentDetailBinding? = null
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(
         view: View,
         savedInstanceState: Bundle?
@@ -27,8 +29,8 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
 
         with(binding) {
             this?.textDetail?.text = song.text
-            this?.nameDetail?.text = song.name
-            this?.authorDetail?.text = song.author
+            this?.nameDetail?.text = "Song: " + song.name
+            this?.authorDetail?.text = "Author: " + song.author
             Glide.with(this@DetailFragment)
                 .load(song.cover)
                 .placeholder(R.drawable.def)
