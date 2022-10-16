@@ -42,7 +42,7 @@ object SongRepository {
                     "На мне сияет Prada и дьявол мой адвока-а-а-а-т\n" +
                     "Не мечта-ай, когда видишь мой сладкий за-а-а-д\n" +
                     "На губа-ах блестит lipstick от Jeffree Sta-a-a-r"),
-        Song(id = 2, name = "P.I.M.P.", author = "50 Cent", cover = "https://i1.sndcdn.com/artworks-000059808514-3ncxmb-t500x500.jpg",
+        Song(id = 2, name = "P.I.M.P.", author = "50 Cent", cover = "https://i.discogs.com/uFwniRoB2Rx1kUDfLBrY3lgE9rCLYijrl5-IsIeDJsI/rs:fit/g:sm/q:40/h:300/w:300/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxNjIz/MzUtMTU2MTM3NzIx/MC0xNzQ0LnBuZw.jpeg",
             "I don't know what you heard about me\n" +
                     "But a bitch can't get a dollar out of me\n" +
                     "No Cadillac, no perms, you can't see\n" +
@@ -147,7 +147,7 @@ object SongRepository {
                     "In the hood they say, there's no b'ness like hoe b'ness, you know\n" +
                     "They say I talk a lil' fast, but if you listen a lil' faster\n" +
                     "I ain't gotta slow down for you to catch up, bitch! Ha ha ha, yea"),
-        Song(id = 3, name = "My Name Is", author = "Eminem", cover = "https://upload.wikimedia.org/wikipedia/ru/4/4f/Eminem_-_My_Name_Is..._CD_cover.jpg",
+        Song(id = 3, name = "My Name Is", author = "Eminem", cover = "https://www.eminem.pro/wp-content/uploads/2015/06/Eminem-My-name-is.jpg",
             "Hi!\n" +
                     "My name is\n" +
                     "What?\n" +
@@ -400,7 +400,7 @@ object SongRepository {
                     "Tats on my neck and my arm, tats on my neck and my arm, yeah, yeah\n" +
                     "Check, yeah, ayy, yeah, uh, yeah\n" +
                     "Tats on my neck and my arm (yeah)"),
-        Song(id = 6, name = "Witchblades", author = "Lil Peep, Lil Tracy", cover = "https://media.pitchfork.com/photos/5929f495d7a71d1ea569af9c/1:1/w_450%2Cc_limit/040399b6.png",
+        Song(id = 6, name = "Witchblades", author = "Lil Peep, Lil Tracy", cover = "https://i.scdn.co/image/ab67616d0000b273c73bd9b0e34b067d7d3bd7b9",
             "MoneyPosse\n" +
                     "Ooh, Bi-Big Head on the beat\n" +
                     "Switchblades, cocaine\n" +
