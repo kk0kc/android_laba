@@ -1,12 +1,17 @@
 package com.example.androidlab
 
+
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
+import android.text.method.ScrollingMovementMethod
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ScrollView
+import android.widget.TextView
+import androidx.annotation.RequiresApi
+import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
 import com.example.androidlab.databinding.FragmentDetailBinding
-import com.example.androidlab.databinding.FragmentListBinding
+
 
 class DetailFragment : Fragment(R.layout.fragment_detail) {
     private var binding: FragmentDetailBinding? = null
@@ -16,9 +21,39 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
     ) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentDetailBinding.bind(view)
+        val song : Song = SongRepository.songs[arguments?.getInt("id")!!]
+        with(binding) {
+            this?.textDetail?.text = song.text
+            this?.nameDetail?.text = song.name
+            this?.authorDetail?.text = song.author
+            Glide.with(this@DetailFragment)
+                .load(song.cover)
+                .placeholder(R.drawable.def)
+                .error(R.drawable.def)
+                .into(this?.coverDetail!!)
+            Glide.with(this@DetailFragment)
+                .load(song.cover)
+                .placeholder(R.drawable.def)
+                .error(R.drawable.def)
+                .into(this.coverDetail2)
+            this.textDetail.movementMethod = ScrollingMovementMethod()
+        }
+
+
     }
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null
+    }
+    companion object {
+
+        fun newInstance(id : Int) : DetailFragment {
+            val fragment = DetailFragment()
+            val bundle = Bundle()
+            bundle.putInt("id", id)
+            fragment.arguments = bundle
+            return fragment
+        }
+
     }
 }

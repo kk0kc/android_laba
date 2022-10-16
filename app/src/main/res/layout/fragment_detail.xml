@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
-    tools:context=".DetailFragment">
+    tools:context=".DetailFragment"
+    tools:ignore="MissingClass">
 
 <!--    <View-->
 <!--        android:layout_width="match_parent"-->
@@ -17,9 +18,8 @@
 <!--        app:layout_constraintEnd_toEndOf="parent"-->
 <!--        app:shapeAppearanceOverlay="@style/rounded_corner" -->
 <!--        />-->
-
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/cover_2"
+        android:id="@+id/cover_detail2"
         android:layout_width="match_parent"
         android:layout_height="240dp"
         android:scaleType="centerCrop"
@@ -30,7 +30,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/cover"
+        android:id="@+id/cover_detail"
         android:layout_width="190dp"
         android:layout_marginTop="24dp"
         app:shapeAppearanceOverlay="@style/rounded_corner"
@@ -41,48 +41,43 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/name_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/cover_2"
+        app:layout_constraintTop_toBottomOf="@id/cover_detail2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="24dp"
         android:text="Name song"
         android:fontFamily="sans-serif-condensed-medium"
         android:textColor="@color/black"
-        android:textSize="20dp"
+        android:textSize="20sp"
         />
     <TextView
-        android:id="@+id/author"
+        android:id="@+id/author_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/name"
+        app:layout_constraintTop_toBottomOf="@id/name_detail"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="Song Author"
-        android:textSize="18dp" />
+        android:textSize="18sp" />
 
 
-    <HorizontalScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:layout_constraintTop_toBottomOf="@id/author"
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/author_detail"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        >
-        <ScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/author"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:gravity="center"
-                android:text="Девчата пляшут под спидами \n
+        android:layout_marginTop="50dp"
+        android:id="@+id/text_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:scrollbars="vertical"
+        android:scrollbarStyle="insideOverlay"
+        android:fadeScrollbars="true"
+        android:fadingEdge="vertical"
+        android:gravity="center"
+        android:text="Девчата пляшут под спидами \n
 (Девчата пляшут под спидами),\n
 А ты стоишь как вкопанный\n
 (А ты стоишь как вкопанный).\n
@@ -131,11 +126,83 @@
 Я забываюсь, помоги мне.\n
 Я задыхаюсь, помоги мне.\n
 Делай, что хочешь я задыхааааюсь."
-                android:textSize="16dp"
-                />
+        android:textSize="16sp"
+        />
 
-        </ScrollView>
-    </HorizontalScrollView>
+
+<!--        <ScrollView-->
+<!--            android:id="@+id/scroll"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/author_detail"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            android:fillViewport="true" >-->
+<!--            <HorizontalScrollView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content">-->
+<!--            <TextView-->
+<!--                android:layout_marginTop="50dp"-->
+<!--                android:id="@+id/text_detail"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:isScrollContainer="true"-->
+<!--                android:gravity="center"-->
+<!--                android:text="Девчата пляшут под спидами \n-->
+<!--(Девчата пляшут под спидами),\n-->
+<!--А ты стоишь как вкопанный\n-->
+<!--(А ты стоишь как вкопанный).\n-->
+<!--Кроссовками ломают пол\n-->
+<!--(Кроссовками ломают пол).\n-->
+<!--А ты стоишь как вкопанный.\n-->
+<!--Ну что за мать его дерьмо?\n-->
+<!--Я знаю, что ты хочешь,\n-->
+<!--Ты хочешь танцевать.\n-->
+<!--Ну-ну же, ну давай же,\n-->
+<!--Ну-ну же, ну давай же.\n-->
+<!--Я знаю, что ты знаешь этот трек,\n-->
+<!--Готовься подпевать.\n-->
+<!--Раз, два, три, четыре.\n-->
+<!--Музыка громче, глаза закрыты\n-->
+<!--Это! нон стоп! ночью открытий\n-->
+<!--Делай, что хочешь я забываюсь\n-->
+<!--Это! нон стоп! Не прекращаясь!\n-->
+<!--Музыка громче, глаза закрыты\n-->
+<!--Это! нон стоп! ночью открытий\n-->
+<!--Буду с тобой самой примерною\n-->
+<!--Утро в окне и мы будем первые!\n-->
+<!--Этот трек делает тебя сильней\n-->
+<!--Он прикольней, чем колеса\n-->
+<!--И роднее, чем портвейн.\n-->
+<!--Раза в три круче, чем самый первый секс-партнер.\n-->
+<!--И все девчата в таком трипе,\n-->
+<!--Что аж мама не горюй.\n-->
+<!--Прыгай так, прыгай так\n-->
+<!--Будто ты совсем дурак.\n-->
+<!--Прыгай так, так и так и так, так\n-->
+<!--Ты же воздух как никак.\n-->
+<!--Прыгай так, прыгай так\n-->
+<!--Будто ты чу покемон.\n-->
+<!--Будто бы вся твоя жизнь\n-->
+<!--Не такое уж дерьмо.\n-->
+<!--Ну что за мать его дерьмо?\n-->
+<!--Музыка громче, глаза закрыты\n-->
+<!--Это! нон стоп! ночью открытий\n-->
+<!--Делай, что хочешь я забываюсь\n-->
+<!--Это! нон стоп! Не прекращаясь!\n-->
+<!--Музыка громче, глаза закрыты\n-->
+<!--Это! нон стоп! ночью открытий\n-->
+<!--Буду с тобой самой примерною\n-->
+<!--Утро в окне и мы будем первые!\n-->
+<!--Я забываюсь, помоги мне.\n-->
+<!--Я задыхаюсь, помоги мне.\n-->
+<!--Делай, что хочешь я задыхааааюсь."-->
+<!--                android:textSize="16sp"-->
+<!--                />-->
+<!--            </HorizontalScrollView>-->
+
+<!--        </ScrollView>-->
+
 
 
 
