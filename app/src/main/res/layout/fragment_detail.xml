@@ -1,210 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
-    tools:context=".DetailFragment"
-    tools:ignore="MissingClass">
-
-<!--    <View-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="240dp"-->
-<!--        android:background="@drawable/rounded"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:shapeAppearanceOverlay="@style/rounded_corner" -->
-<!--        />-->
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/cover_detail2"
+    tools:context=".DetailFragment">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_marginTop="56dp"
+        android:id="@+id/main.appBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="240dp"
-        android:scaleType="centerCrop"
-        app:srcCompat="@drawable/def"
-        android:alpha="0.4"
-        app:shapeAppearanceOverlay="@style/rounded_corner"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/cover_detail"
-        android:layout_width="190dp"
-        android:layout_marginTop="24dp"
-        app:shapeAppearanceOverlay="@style/rounded_corner"
-        android:scaleType="centerCrop"
-        android:layout_height="190dp"
-        app:srcCompat="@drawable/def"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-    <TextView
-        android:id="@+id/name_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/cover_detail2"
+        app:layout_constraintEnd_toEndOf="parent">
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/main.collapsingToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:fitsSystemWindows="true"
+            app:contentScrim="@color/purple_200"
+            app:shapeAppearanceOverlay="@style/rounded_corner"
+            app:layout_scrollFlags="scroll">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/cover_detail2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/def"
+                android:alpha="0.4"
+                app:shapeAppearanceOverlay="@style/rounded_corner" />
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/cover_detail"
+                android:layout_width="190dp"
+                android:layout_marginTop="24dp"
+                app:shapeAppearanceOverlay="@style/rounded_corner"
+                android:scaleType="centerCrop"
+                android:layout_height="190dp"
+                android:layout_marginStart="100dp"
+                app:srcCompat="@drawable/def"/>
+            <Toolbar
+                android:id="@+id/toolBarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:contentInsetStart="0dp"
+                android:contentInsetStartWithNavigation="0dp"
+                app:layout_collapseMode="pin"
+                android:popupTheme="@style/ThemeOverlay.MaterialComponents.Light"/>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.core.widget.NestedScrollView
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp"
-        android:text="Name song"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        />
-    <TextView
-        android:id="@+id/author_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/name_detail"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <TextView
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/text_detail"
+            android:layout_marginTop="90dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="
+            Пожалуйста, не умиpай\n
+            Или мне придётся тоже\n
+            Ты, конечно, сразу в рай\n
+            А я не думаю, что тоже\n
+            Хочешь сладких апельсинов?\n
+            Хочешь вслух рассказов длинных?\n
+            Хочешь, я взорву все звёзды\n
+            Что мешают спать?\n
+            Пожалуйста, только живи\n
+            Ты же видишь: я живу тобою\n
+            Моей огромной любви\n
+            Хватит нам двоим с головою\n
+            Хочешь в море с парусами?\n
+            Хочешь музык новых самых?\n
+            Хочешь, я убью соседей\n
+            Что мешают спать?\n
+            Хочешь солнце вместо лампы?\n
+            Хочешь за окошком Альпы?\n
+            Хочешь, я отдам все пeсни?\n
+            Про тебя отдам все пeсни\n
+            Хочешь солнце вместо лампы?\n
+            Хочешь за окошком Альпы?\n
+            Хочешь, я отдам все пeсни?\n
+            Про тебя отдам все пeсни я"
+                android:textSize="16sp"
+                />
+        </androidx.core.widget.NestedScrollView>
+    <androidx.core.widget.NestedScrollView
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="Song Author"
-        android:textSize="18sp" />
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <TextView
+            android:id="@+id/name_detail"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"
+            android:text="Name song"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            />
+    </androidx.core.widget.NestedScrollView>
 
-
-    <TextView
-        app:layout_constraintTop_toBottomOf="@id/author_detail"
+    <androidx.core.widget.NestedScrollView
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="50dp"
-        android:id="@+id/text_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:scrollbars="vertical"
-        android:scrollbarStyle="insideOverlay"
-        android:fadeScrollbars="true"
-        android:fadingEdge="vertical"
-        android:gravity="center"
-        android:text="Девчата пляшут под спидами \n
-(Девчата пляшут под спидами),\n
-А ты стоишь как вкопанный\n
-(А ты стоишь как вкопанный).\n
-Кроссовками ломают пол\n
-(Кроссовками ломают пол).\n
-А ты стоишь как вкопанный.\n
-Ну что за мать его дерьмо?\n
-Я знаю, что ты хочешь,\n
-Ты хочешь танцевать.\n
-Ну-ну же, ну давай же,\n
-Ну-ну же, ну давай же.\n
-Я знаю, что ты знаешь этот трек,\n
-Готовься подпевать.\n
-Раз, два, три, четыре.\n
-Музыка громче, глаза закрыты\n
-Это! нон стоп! ночью открытий\n
-Делай, что хочешь я забываюсь\n
-Это! нон стоп! Не прекращаясь!\n
-Музыка громче, глаза закрыты\n
-Это! нон стоп! ночью открытий\n
-Буду с тобой самой примерною\n
-Утро в окне и мы будем первые!\n
-Этот трек делает тебя сильней\n
-Он прикольней, чем колеса\n
-И роднее, чем портвейн.\n
-Раза в три круче, чем самый первый секс-партнер.\n
-И все девчата в таком трипе,\n
-Что аж мама не горюй.\n
-Прыгай так, прыгай так\n
-Будто ты совсем дурак.\n
-Прыгай так, так и так и так, так\n
-Ты же воздух как никак.\n
-Прыгай так, прыгай так\n
-Будто ты чу покемон.\n
-Будто бы вся твоя жизнь\n
-Не такое уж дерьмо.\n
-Ну что за мать его дерьмо?\n
-Музыка громче, глаза закрыты\n
-Это! нон стоп! ночью открытий\n
-Делай, что хочешь я забываюсь\n
-Это! нон стоп! Не прекращаясь!\n
-Музыка громче, глаза закрыты\n
-Это! нон стоп! ночью открытий\n
-Буду с тобой самой примерною\n
-Утро в окне и мы будем первые!\n
-Я забываюсь, помоги мне.\n
-Я задыхаюсь, помоги мне.\n
-Делай, что хочешь я задыхааааюсь."
-        android:textSize="16sp"
-        />
-
-
-<!--        <ScrollView-->
-<!--            android:id="@+id/scroll"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/author_detail"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            android:fillViewport="true" >-->
-<!--            <HorizontalScrollView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content">-->
-<!--            <TextView-->
-<!--                android:layout_marginTop="50dp"-->
-<!--                android:id="@+id/text_detail"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:isScrollContainer="true"-->
-<!--                android:gravity="center"-->
-<!--                android:text="Девчата пляшут под спидами \n-->
-<!--(Девчата пляшут под спидами),\n-->
-<!--А ты стоишь как вкопанный\n-->
-<!--(А ты стоишь как вкопанный).\n-->
-<!--Кроссовками ломают пол\n-->
-<!--(Кроссовками ломают пол).\n-->
-<!--А ты стоишь как вкопанный.\n-->
-<!--Ну что за мать его дерьмо?\n-->
-<!--Я знаю, что ты хочешь,\n-->
-<!--Ты хочешь танцевать.\n-->
-<!--Ну-ну же, ну давай же,\n-->
-<!--Ну-ну же, ну давай же.\n-->
-<!--Я знаю, что ты знаешь этот трек,\n-->
-<!--Готовься подпевать.\n-->
-<!--Раз, два, три, четыре.\n-->
-<!--Музыка громче, глаза закрыты\n-->
-<!--Это! нон стоп! ночью открытий\n-->
-<!--Делай, что хочешь я забываюсь\n-->
-<!--Это! нон стоп! Не прекращаясь!\n-->
-<!--Музыка громче, глаза закрыты\n-->
-<!--Это! нон стоп! ночью открытий\n-->
-<!--Буду с тобой самой примерною\n-->
-<!--Утро в окне и мы будем первые!\n-->
-<!--Этот трек делает тебя сильней\n-->
-<!--Он прикольней, чем колеса\n-->
-<!--И роднее, чем портвейн.\n-->
-<!--Раза в три круче, чем самый первый секс-партнер.\n-->
-<!--И все девчата в таком трипе,\n-->
-<!--Что аж мама не горюй.\n-->
-<!--Прыгай так, прыгай так\n-->
-<!--Будто ты совсем дурак.\n-->
-<!--Прыгай так, так и так и так, так\n-->
-<!--Ты же воздух как никак.\n-->
-<!--Прыгай так, прыгай так\n-->
-<!--Будто ты чу покемон.\n-->
-<!--Будто бы вся твоя жизнь\n-->
-<!--Не такое уж дерьмо.\n-->
-<!--Ну что за мать его дерьмо?\n-->
-<!--Музыка громче, глаза закрыты\n-->
-<!--Это! нон стоп! ночью открытий\n-->
-<!--Делай, что хочешь я забываюсь\n-->
-<!--Это! нон стоп! Не прекращаясь!\n-->
-<!--Музыка громче, глаза закрыты\n-->
-<!--Это! нон стоп! ночью открытий\n-->
-<!--Буду с тобой самой примерною\n-->
-<!--Утро в окне и мы будем первые!\n-->
-<!--Я забываюсь, помоги мне.\n-->
-<!--Я задыхаюсь, помоги мне.\n-->
-<!--Делай, что хочешь я задыхааааюсь."-->
-<!--                android:textSize="16sp"-->
-<!--                />-->
-<!--            </HorizontalScrollView>-->
-
-<!--        </ScrollView>-->
-
-
-
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <TextView
+            android:id="@+id/author_detail"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_marginTop="50dp"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Song Author"
+            android:textSize="18sp" />
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
