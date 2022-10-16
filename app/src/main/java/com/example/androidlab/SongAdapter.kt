@@ -8,7 +8,8 @@ import com.example.androidlab.databinding.ItemSongBinding
 
 class SongAdapter(
     private val list: List<Song>,
-    private val glide: RequestManager
+    private val glide: RequestManager,
+    private val onItemClick: (Song) -> Unit
 ) : RecyclerView.Adapter<SongItem>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -18,7 +19,9 @@ class SongAdapter(
         LayoutInflater.from(parent.context),
         parent,
         false
-    ), glide = glide)
+    ), glide = glide,
+        onItemClick = onItemClick)
+
 
     override fun onBindViewHolder(
         holder: SongItem,

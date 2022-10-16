@@ -17,8 +17,31 @@ class ListFragment : Fragment(R.layout.fragment_list) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentListBinding.bind(view)
         binding?.run {
-            rvSongs.adapter = SongAdapter(SongRepository.songs, Glide.with(this@ListFragment))
+            adapter = SongAdapter(SongRepository.songs, Glide.with(this@ListFragment)) {
+                parentFragmentManager.beginTransaction()
+                .setCustomAnimations(
+                    android.R.anim.fade_in, android.R.anim.fade_out,
+                    android.R.anim.fade_in, android.R.anim.fade_out
+                )
+                .replace(R.id.container, DetailFragment())
+                .addToBackStack("ListFragment")
+                .commit()
+            }
+            rvSongs.adapter =adapter
+
+
+//            rvSongs.adapter = SongAdapter(SongRepository.songs, Glide.with(this@ListFragment))
 //            rvSongs.layoutManager = LinearLayoutManager(this@ListFragment)
+        }
+        binding?.rvSongs?.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .setCustomAnimations(
+                    android.R.anim.fade_in, android.R.anim.fade_out,
+                    android.R.anim.fade_in, android.R.anim.fade_out
+                )
+                .add(R.id.container, DetailFragment())
+                .addToBackStack("FirstFragment")
+                .commit()
         }
     }
     override fun onDestroyView() {
