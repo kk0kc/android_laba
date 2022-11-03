@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nested_graph"
+    app:startDestination="@id/thirdFragment">
+    <fragment
+        android:id="@+id/thirdFragment"
+        android:name="com.example.androidlab.firstlevel.ThirdFragment"
+        android:label="fragment_third"
+        tools:layout="@layout/fragment_third">
+        <action
+            android:id="@+id/action_thirdFragment_to_newFirstFragment"
+            app:destination="@id/newFirstFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_thirdFragment_to_newSecondFragment"
+            app:destination="@id/newSecondFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_thirdFragment_to_newThirdFragment"
+            app:destination="@id/newThirdFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_thirdFragment_to_newFourthFragment"
+            app:destination="@id/newFourthFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/newFirstFragment"
+        android:name="com.example.androidlab.secondlevel.NewFirstFragment"
+        android:label="fragment_new_first"
+        tools:layout="@layout/fragment_new_first" />
+    <fragment
+        android:id="@+id/newSecondFragment"
+        android:name="com.example.androidlab.secondlevel.NewSecondFragment"
+        android:label="fragment_new_second"
+        tools:layout="@layout/fragment_new_second" />
+    <fragment
+        android:id="@+id/newThirdFragment"
+        android:name="com.example.androidlab.secondlevel.NewThirdFragment"
+        android:label="fragment_new_third"
+        tools:layout="@layout/fragment_new_third" />
+    <fragment
+        android:id="@+id/newFourthFragment"
+        android:name="com.example.androidlab.secondlevel.NewFourthFragment"
+        android:label="fragment_new_fourth"
+        tools:layout="@layout/fragment_new_fourth" />
+</navigation>
