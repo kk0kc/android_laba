@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/firstFragment"
+        android:icon="@drawable/heart"
+        android:title="first" />
+
+    <item
+        android:id="@+id/secondFragment"
+        android:icon="@drawable/heart"
+        android:title="second" />
+
+    <item
+        android:id="@+id/nested_graph"
+        android:checked="true"
+        android:icon="@drawable/heart"
+        android:title="third" />
+    <item
+        android:id="@+id/fourthFragment"
+        android:checked="true"
+        android:icon="@drawable/heart"
+        android:title="fourth" />
+    <item
+        android:id="@+id/fifthFragment"
+        android:checked="true"
+        android:icon="@drawable/heart"
+        android:title="fifth" />
+</menu>
