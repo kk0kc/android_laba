@@ -2,15 +2,9 @@ package com.example.androidlab
 
 
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
 import android.view.View
-import android.view.ViewGroup
-import android.widget.ScrollView
-import android.widget.TextView
-import android.widget.Toolbar
-import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.example.androidlab.databinding.FragmentDetailBinding
@@ -25,19 +19,18 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
     ) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentDetailBinding.bind(view)
-        val song : Song = SongRepository.songs[arguments?.getInt("id")!!]
-
+        val song : MyItems.Song = Repository.songs[arguments?.getInt("id")!!]
         with(binding) {
             this?.textDetail?.text = song.text
             this?.nameDetail?.text = "Song: " + song.name
             this?.authorDetail?.text = "Author: " + song.author
             Glide.with(this@DetailFragment)
-                .load(song.cover)
+                .load(song.imageUrl)
                 .placeholder(R.drawable.def)
                 .error(R.drawable.def)
                 .into(this?.coverDetail!!)
             Glide.with(this@DetailFragment)
-                .load(song.cover)
+                .load(song.imageUrl)
                 .placeholder(R.drawable.def)
                 .error(R.drawable.def)
                 .into(this.coverDetail2)

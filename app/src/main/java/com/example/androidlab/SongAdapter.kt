@@ -1,34 +1,34 @@
 package com.example.androidlab
 
-import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.RequestManager
-import com.example.androidlab.databinding.ItemSongBinding
-
 class SongAdapter(
-    private val list: List<Song>,
-    private val glide: RequestManager,
-    private val onItemClick: (Song) -> Unit
-) : RecyclerView.Adapter<SongItem>() {
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): SongItem = SongItem(
-        binding = ItemSongBinding.inflate(
-        LayoutInflater.from(parent.context),
-        parent,
-        false
-    ), glide = glide,
-        onItemClick = onItemClick)
+    val differ: DiffUtil.ItemCallback<MyItems>,
+    val onItemClicked: ((MyItems.Song)-> Unit)?,
+    val onDeleteClicked: ((Int)-> Unit)
+) :
+    ListAdapter<MyItems, RecyclerView.ViewHolder>(differ) {
 
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder =
+        when (viewType) {
+            R.layout.advertisement_layout -> AdvertisementViewHolder.create(parent)
+            R.layout.item_song -> SongViewHolder.create(parent, onItemClicked, onDeleteClicked)
+            else -> throw IllegalArgumentException("There is no viewHolder for such an item! : )")
+        }
 
-    override fun onBindViewHolder(
-        holder: SongItem,
-        position: Int
-    ) {
-        holder.onBind(list[position])
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        val item = currentList[position]
+        when (holder) {
+            is AdvertisementViewHolder -> holder.onBind(item as MyItems.Advertisement)
+            is SongViewHolder -> holder.onBind(item as MyItems.Song)
+        }
     }
 
-    override fun getItemCount(): Int = list.size
+    override fun getItemViewType(position: Int): Int =
+        when(currentList[position]) {
+            is MyItems.Song -> R.layout.item_song
+            is MyItems.Advertisement -> R.layout.advertisement_layout
+        }
 }
