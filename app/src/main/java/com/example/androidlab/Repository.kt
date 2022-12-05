@@ -8,7 +8,7 @@ object Repository {
         private set
 
     val songs: List<MyItems.Song> = listOf(
-        MyItems.Song(id = 0, name = "Хочешь?", author = "Земфира", "https://avatars.yandex.net/get-music-content/5234929/e893dd2c.a.81431-2/m1000x1000", "not added"),
+        MyItems.Song(id = 0, name = "Хочешь?", author = "Земфира", "https://avatars.yandex.net/get-music-content/5234929/e893dd2c.a.81431-2/m1000x1000", "not added", R.raw.instasamka),
         MyItems.Song(id = 1, name = "Popstar", author = "Instasamka", "https://images.genius.com/98f860503d2a68583a8cd0c320df1c4a.1000x1000x1.png",
                         "Королева этих клубов, а, а, а\n" +
                     "На мне норковая шуба, а, а, а\n" +
@@ -40,7 +40,8 @@ object Repository {
                     "А, а, а... А, а, а\n" +
                     "Ты слышишь мой голос и улетаешь в ра-ай\n" +
                     "На мне сияет Prada и дьявол мой адвока-а-а-а-т\n" +
-                    "Не мечта-ай, когда видишь мой сладкий за-а-а-д\n"),
+                    "Не мечта-ай, когда видишь мой сладкий за-а-а-д\n",
+        R.raw.instasamka),
         MyItems.Song(id = 2, name = "P.I.M.P.", author = "50 Cent", "https://i.discogs.com/uFwniRoB2Rx1kUDfLBrY3lgE9rCLYijrl5-IsIeDJsI/rs:fit/g:sm/q:40/h:300/w:300/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxNjIz/MzUtMTU2MTM3NzIx/MC0xNzQ0LnBuZw.jpeg",
             "I don't know what you heard about me\n" +
                     "But a bitch can't get a dollar out of me\n" +
@@ -145,7 +146,8 @@ object Repository {
                     "Yeah, in Hollywoood they say, there's no b'ness like show b'ness\n" +
                     "In the hood they say, there's no b'ness like hoe b'ness, you know\n" +
                     "They say I talk a lil' fast, but if you listen a lil' faster\n" +
-                    "I ain't gotta slow down for you to catch up, bitch! Ha ha ha, yea"),
+                    "I ain't gotta slow down for you to catch up, bitch! Ha ha ha, yea",
+        R.raw.pimp),
         MyItems.Song(id = 3, name = "My Name Is", author = "Eminem", "https://www.eminem.pro/wp-content/uploads/2015/06/Eminem-My-name-is.jpg",
                         "Hi!\n" +
                     "My name is\n" +
@@ -322,7 +324,8 @@ object Repository {
                     "My name is\n" +
                     "Who?\n" +
                     "My name is\n" +
-                    "Chika-chika\n"),
+                    "Chika-chika\n",
+        R.raw.eminem),
         MyItems.Song(id = 4, name = "Твоя фигура", author = "Буерак", "https://images.genius.com/b2af063dc1633836408fce214c835289.1000x1000x1.jpg",
                         "Ремень на брюках затяну я туго.\n" +
                     "Говорить с тобой мне совсем неинтересно.\n" +
@@ -339,7 +342,8 @@ object Repository {
                     "Я хочу дышать спокойно - не выходит спокойно.\n" +
                     "Мои ясные мысли кровоточат очень больно.\n" +
                     "Рядом с тобой я сам не свой.\n" +
-                    "Рядом с тобой я твой."),
+                    "Рядом с тобой я твой.",
+        R.raw.buerak),
         MyItems.Song(id = 5, name = "Location", author = "Playboi Carti", "https://images.genius.com/f180d9cec151b5769b927c3e59265467.1000x1000x1.png",
                         "La música de Harry Fraud\n" +
                     "Yeah, yeah, yeah, yeah, yeah\n" +
@@ -396,8 +400,9 @@ object Repository {
                     "Tats on my neck and my arms\n" +
                     "Tats on my neck and my arm, tats on my neck and my arm, yeah, ayy\n" +
                     "Tats on my neck and my arm, tats on my neck and my arm, yeah, yeah\n" +
-                    "Check, yeah, ayy, yeah, uh, yeah\n"),
-        MyItems.Song(id = 6, name = "Witchblades", author = "Lil Peep, Lil Tracy", "https://i.scdn.co/image/ab67616d0000b273c73bd9b0e34b067d7d3bd7b9", "not added")
+                    "Check, yeah, ayy, yeah, uh, yeah\n",
+        R.raw.location),
+        MyItems.Song(id = 6, name = "Witchblades", author = "Lil Peep, Lil Tracy", "https://i.scdn.co/image/ab67616d0000b273c73bd9b0e34b067d7d3bd7b9", "not added", null)
 
     )
     val advertisement: List<MyItems> = listOf(
@@ -415,6 +420,10 @@ object Repository {
         )
     )
 
+
+    fun getTrack(id: Int): MyItems.Song {
+        return songs.single() {it.id == id}
+    }
     fun generateList(size: Int) {
         val list = dataList
         var k = 0

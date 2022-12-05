@@ -32,7 +32,7 @@ open class DialogFragment : DialogFragment(R.layout.fragment_dialog) {
                     ,MyItems.Song(positionNumb
                         ,name.text.toString()
                     ,author.text.toString(), "https://secure.gravatar.com/avatar/b16810316f7a5fede3cc83c6bcade4fb?s=915&d=mm&r=g",
-                    "not added"))
+                    "not added", null))
                 ListFragment.adapter?.submitList(Repository.dataList)
 
                 dialog.dismiss()
