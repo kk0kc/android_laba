@@ -14,5 +14,13 @@
         tools:itemCount="5"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:shapeAppearanceOverlay="@style/rounded_corner"/>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:backgroundTint="@color/purple_300"
+        android:src="@drawable/ic_add"
+        android:layout_margin="16dp" />
 
 </FrameLayout>

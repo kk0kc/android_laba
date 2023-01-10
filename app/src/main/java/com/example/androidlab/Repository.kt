@@ -1,16 +1,16 @@
 package com.example.androidlab
 
-object SongRepository {
-    val songs = arrayListOf(
-        Song(id = 0, name = "Хочешь?", author = "Земфира", cover = "https://avatars.yandex.net/get-music-content/5234929/e893dd2c.a.81431-2/m1000x1000",
-            "Пожалуйста, не умиpай\nИли мне придётся тоже\nТы, конечно, сразу в рай\nА я не думаю, что тоже\n" +
-                "Хочешь сладких апельсинов?\nХочешь вслух рассказов длинных?\nХочешь, я взорву все звёзды\nЧто мешают спать?\n"+
-    "Пожалуйста, только живи\nТы же видишь: я живу тобою\nМоей огромной любви\nХватит нам двоим с головою\n"+
-    "Хочешь в море с парусами?\nХочешь музык новых самых?\nХочешь, я убью соседей\nЧто мешают спать?\nХочешь солнце вместо лампы?\n"+
-    "Хочешь за окошком Альпы?\nХочешь, я отдам все пeсни?\nПро тебя отдам все пeсни\nХочешь солнце вместо лампы?\n"+
-    "Хочешь за окошком Альпы?\nХочешь, я отдам все пeсни?\nПро тебя отдам все пeсни я"),
-        Song(id = 1, name = "Popstar", author = "Instasamka", cover = "https://images.genius.com/98f860503d2a68583a8cd0c320df1c4a.1000x1000x1.png",
-            "Королева этих клубов, а, а, а\n" +
+import android.content.Context
+
+object Repository {
+
+    var dataList: MutableList<MyItems> = mutableListOf()
+        private set
+
+    val songs: List<MyItems.Song> = listOf(
+        MyItems.Song(id = 0, name = "Хочешь?", author = "Земфира", "https://avatars.yandex.net/get-music-content/5234929/e893dd2c.a.81431-2/m1000x1000", "not added"),
+        MyItems.Song(id = 1, name = "Popstar", author = "Instasamka", "https://images.genius.com/98f860503d2a68583a8cd0c320df1c4a.1000x1000x1.png",
+                        "Королева этих клубов, а, а, а\n" +
                     "На мне норковая шуба, а, а, а\n" +
                     "Я влетаю с ноги тупо, а, а, а\n" +
                     "Эти тусы меня любят, а, а, а\n" +
@@ -40,9 +40,8 @@ object SongRepository {
                     "А, а, а... А, а, а\n" +
                     "Ты слышишь мой голос и улетаешь в ра-ай\n" +
                     "На мне сияет Prada и дьявол мой адвока-а-а-а-т\n" +
-                    "Не мечта-ай, когда видишь мой сладкий за-а-а-д\n" +
-                    "На губа-ах блестит lipstick от Jeffree Sta-a-a-r"),
-        Song(id = 2, name = "P.I.M.P.", author = "50 Cent", cover = "https://i.discogs.com/uFwniRoB2Rx1kUDfLBrY3lgE9rCLYijrl5-IsIeDJsI/rs:fit/g:sm/q:40/h:300/w:300/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxNjIz/MzUtMTU2MTM3NzIx/MC0xNzQ0LnBuZw.jpeg",
+                    "Не мечта-ай, когда видишь мой сладкий за-а-а-д\n"),
+        MyItems.Song(id = 2, name = "P.I.M.P.", author = "50 Cent", "https://i.discogs.com/uFwniRoB2Rx1kUDfLBrY3lgE9rCLYijrl5-IsIeDJsI/rs:fit/g:sm/q:40/h:300/w:300/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxNjIz/MzUtMTU2MTM3NzIx/MC0xNzQ0LnBuZw.jpeg",
             "I don't know what you heard about me\n" +
                     "But a bitch can't get a dollar out of me\n" +
                     "No Cadillac, no perms, you can't see\n" +
@@ -147,8 +146,8 @@ object SongRepository {
                     "In the hood they say, there's no b'ness like hoe b'ness, you know\n" +
                     "They say I talk a lil' fast, but if you listen a lil' faster\n" +
                     "I ain't gotta slow down for you to catch up, bitch! Ha ha ha, yea"),
-        Song(id = 3, name = "My Name Is", author = "Eminem", cover = "https://www.eminem.pro/wp-content/uploads/2015/06/Eminem-My-name-is.jpg",
-            "Hi!\n" +
+        MyItems.Song(id = 3, name = "My Name Is", author = "Eminem", "https://www.eminem.pro/wp-content/uploads/2015/06/Eminem-My-name-is.jpg",
+                        "Hi!\n" +
                     "My name is\n" +
                     "What?\n" +
                     "My name is\n" +
@@ -323,10 +322,9 @@ object SongRepository {
                     "My name is\n" +
                     "Who?\n" +
                     "My name is\n" +
-                    "Chika-chika\n" +
-                    "Slim Shady"),
-        Song(id = 4, name = "Твоя фигура", author = "Буерак", cover = "https://images.genius.com/b2af063dc1633836408fce214c835289.1000x1000x1.jpg",
-            "Ремень на брюках затяну я туго.\n" +
+                    "Chika-chika\n"),
+        MyItems.Song(id = 4, name = "Твоя фигура", author = "Буерак", "https://images.genius.com/b2af063dc1633836408fce214c835289.1000x1000x1.jpg",
+                        "Ремень на брюках затяну я туго.\n" +
                     "Говорить с тобой мне совсем неинтересно.\n" +
                     "Твоя милая фигура - очень грязная фигура.\n" +
                     "Ты словно для меня из рая слезла.\n" +
@@ -342,8 +340,8 @@ object SongRepository {
                     "Мои ясные мысли кровоточат очень больно.\n" +
                     "Рядом с тобой я сам не свой.\n" +
                     "Рядом с тобой я твой."),
-        Song(id = 5, name = "Location", author = "Playboi Carti", cover = "https://images.genius.com/f180d9cec151b5769b927c3e59265467.1000x1000x1.png",
-            "La música de Harry Fraud\n" +
+        MyItems.Song(id = 5, name = "Location", author = "Playboi Carti", "https://images.genius.com/f180d9cec151b5769b927c3e59265467.1000x1000x1.png",
+                        "La música de Harry Fraud\n" +
                     "Yeah, yeah, yeah, yeah, yeah\n" +
                     "Yeah, yeah, yeah, yeah, yeah\n" +
                     "Yeah, yeah, yeah, yeah\n" +
@@ -398,169 +396,78 @@ object SongRepository {
                     "Tats on my neck and my arms\n" +
                     "Tats on my neck and my arm, tats on my neck and my arm, yeah, ayy\n" +
                     "Tats on my neck and my arm, tats on my neck and my arm, yeah, yeah\n" +
-                    "Check, yeah, ayy, yeah, uh, yeah\n" +
-                    "Tats on my neck and my arm (yeah)"),
-        Song(id = 6, name = "Witchblades", author = "Lil Peep, Lil Tracy", cover = "https://i.scdn.co/image/ab67616d0000b273c73bd9b0e34b067d7d3bd7b9",
-            "MoneyPosse\n" +
-                    "Ooh, Bi-Big Head on the beat\n" +
-                    "Switchblades, cocaine\n" +
-                    "GothBoiClique make a ho shake\n" +
-                    "Black fur, black coat\n" +
-                    "GothBoiClique in the back, ho\n" +
-                    "Switchblades, cocaine\n" +
-                    "GothBoiClique 'til my soul take\n" +
-                    "Black jeans, half black hoes\n" +
-                    "GothBoiClique in the castle\n" +
-                    "In high school, I was a loner\n" +
-                    "I was a reject, I was a poser\n" +
-                    "Multiple personalities, I'm bipolar\n" +
-                    "I swear, I mean well, I'm still goin' to hell\n" +
-                    "Witchcraft, love chants\n" +
-                    "Whisper in my ear, put me in a trance\n" +
-                    "Cocaine all night long\n" +
-                    "When I die, bury me with all my ice on\n" +
-                    "Witchcraft, love chants\n" +
-                    "Whisper in my ear, put me in a trance\n" +
-                    "Cocaine all night long\n" +
-                    "When I die, bury me with all my ice on\n" +
-                    "When I die, bury me with all my ice on\n" +
-                    "When I die, bury me without the lights on\n" +
-                    "Lights off, nightlights\n" +
-                    "Clothes off, baby, I got good white\n" +
-                    "When I die, bury me with all my ice on\n" +
-                    "When I die, bury me without the lights on\n" +
-                    "Lights off, nightlights\n" +
-                    "Clothes off, baby, I got good white\n" +
-                    "Clothes off, baby, I got good white\n" +
-                    "Tell me a secret and I'll tell one of mines\n" +
-                    "I just wanna talk, I don't wanna fight\n" +
-                    "Ask me if I'm alright, do you want me to lie?\n" +
-                    "Switchblades, cocaine\n" +
-                    "GothBoiClique make a ho shake\n" +
-                    "Black fur, black coat\n" +
-                    "GothBoiClique in the back, ho\n" +
-                    "Switchblades, cocaine\n" +
-                    "GothBoiClique 'til my soul take\n" +
-                    "Black jeans, half black hoes\n" +
-                    "GothBoiClique in the castle"),
-        Song(id = 7, name = "All the good girls go to hell", author = "Billie Eilish", cover = "https://i1.sndcdn.com/artworks-000528017184-xyptgs-t500x500.jpg",
-            "My Lucifer is lonely\n" +
-                    "Standing there, killing time\n" +
-                    "Can't commit to anything but a crime\n" +
-                    "Peter's on vacation, an open invitation\n" +
-                    "Animals, evidence\n" +
-                    "Pearly gates look more like a picket fence\n" +
-                    "Once you get inside 'em\n" +
-                    "Got friends but can't invite them\n" +
-                    "Hills burn in California\n" +
-                    "My turn to ignore ya\n" +
-                    "Don't say I didn't warn ya\n" +
-                    "All the good girls go to hell\n" +
-                    "'Cause even God herself has enemies\n" +
-                    "And once the water starts to rise\n" +
-                    "And heaven's out of sight\n" +
-                    "She'll want the devil on her team\n" +
-                    "My Lucifer is lonely\n" +
-                    "Look at you needing me\n" +
-                    "You know I'm not your friend without some greenery\n" +
-                    "Walk in wearing fetters\n" +
-                    "Peter should know better\n" +
-                    "Your cover up is caving in\n" +
-                    "Man is such a fool\n" +
-                    "Why are we saving him?\n" +
-                    "Poisoning themselves now\n" +
-                    "Begging for our help, wow!\n" +
-                    "Hills burn in California\n" +
-                    "My turn to ignore ya\n" +
-                    "Don't say I didn't warn ya\n" +
-                    "All the good girls go to hell\n" +
-                    "'Cause even God herself has enemies\n" +
-                    "And once the water starts to rise\n" +
-                    "And heaven's out of sight\n" +
-                    "She'll want the devil on her team\n" +
-                    "My Lucifer is lonely\n" +
-                    "There's nothing left to save now\n" +
-                    "My god is gonna owe me\n" +
-                    "There's nothing left to save now"),
-        Song(id = 8, name = "Кукла колдуна", author = "Король и Шут", cover = "https://avatars.yandex.net/get-music-content/163479/b3e3efc4.a.7019257-3/m1000x1000",
-            "Тёмный, мрачный коридор\n" +
-                    "Я на цыпочках, как вор\n" +
-                    "Пробираюсь, чуть дыша\n" +
-                    "Чтобы не спугнуть\n" +
-                    "Тех, кто спит уже давно\n" +
-                    "Тех, кому не всё равно\n" +
-                    "В чью я комнату тайком\n" +
-                    "Желаю заглянуть\n" +
-                    "Чтобы увидеть\n" +
-                    "Как бессонница в час ночной\n" +
-                    "Меняет, нелюдимая, облик твой\n" +
-                    "Чьих невольница ты идей?\n" +
-                    "Зачем тебе охотиться на людей?\n" +
-                    "Крестик на моей груди\n" +
-                    "На него ты погляди\n" +
-                    "Что в тебе способен он\n" +
-                    "Резко изменить?\n" +
-                    "Много книжек я читал\n" +
-                    "Много фокусов видал\n" +
-                    "Свою тайну от меня\n" +
-                    "Не пытайся скрыть!\n" +
-                    "Я это видел!\n" +
-                    "Как бессонница в час ночной\n" +
-                    "Меняет, нелюдимая, облик твой\n" +
-                    "Чьих невольница ты идей?\n" +
-                    "Зачем тебе охотиться на людей?\n" +
-                    "Очень жаль, что ты тогда\n" +
-                    "Мне поверить не смогла,\n" +
-                    "В то, что новый твой приятель\n" +
-                    "Не такой, как все!\n" +
-                    "Ты осталась с ним вдвоём\n" +
-                    "Не зная ничего о нём\n" +
-                    "Что для всех опасен он\n" +
-                    "Наплевать тебе!r\n" +
-                    "И ты попала!\n" +
-                    "К настоящему колдуну\n" +
-                    "Он загубил таких, как ты, не одну!\n" +
-                    "Словно куклой и в час ночной\n" +
-                    "Теперь он может управлять тобой!\n" +
-                    "Всё происходит, будто в страшном сне\n" +
-                    "И находиться здесь опасно мне!"),
-        Song(id = 9, name = "Надежда", author = "ssshhhiiittt!", cover = "https://images.genius.com/2af51984e02019006f38b26300bc14b7.1000x1000x1.jpg",
-            "День распадается на тысячи фраз\n" +
-                    "Оставляя внутри меня свет\n" +
-                    "Как много жизней, я был так рад, но больше этого нет\n" +
-                    "Я хочу смотреть на собак\n" +
-                    "Я хочу собирать цветы\n" +
-                    "Я не причастен к наземным делам\n" +
-                    "На них у меня нет сил\n" +
-                    "Наверное\n" +
-                    "\n" +
-                    "Бесконечно курим\n" +
-                    "Ведь так хочется курить и так хочется забыть\n" +
-                    "Все, что мне мешало жить\n" +
-                    "И все вокруг ценить, разрываю эту нить\n" +
-                    "Обними, пожалуйста, не дай в себя уйти\n" +
-                    "У меня есть два пути:\n" +
-                    "Либо снова уничтожить все и к началу прийти\n" +
-                    "Либо снова научиться верить в солнечные дни\n" +
-                    "\n" +
-                    "Утро настало и из домов\n" +
-                    "Повылазили страшные тени\n" +
-                    "Они угнетают, зачем они мне?\n" +
-                    "Вспоминаю, как мы хотели\n" +
-                    "Купаться в лучах и никаких дел\n" +
-                    "Наивно, по-детски, но по-настоящему\n" +
-                    "Источник teksty-pesenok.ru\n" +
-                    "Вырос, но так и не стал взрослым\n" +
-                    "Что мне теперь с этим делать?\n" +
-                    "Ведь я все испортил\n" +
-                    "\n" +
-                    "Бесконечно курим\n" +
-                    "Ведь так хочется курить, и так хочется забыть\n" +
-                    "Все, что мне мешало жить\n" +
-                    "И все вокруг ценить, разрываю эту нить\n" +
-                    "Обними, пожалуйста, не дай в себя уйти\n" +
-                    "У меня есть два пути:\n" +
-                    "Либо снова уничтожить все и к началу прийти\n" +
-                    "Либо снова научиться верить в солнечные дни")
+                    "Check, yeah, ayy, yeah, uh, yeah\n"),
+        MyItems.Song(id = 6, name = "Witchblades", author = "Lil Peep, Lil Tracy", "https://i.scdn.co/image/ab67616d0000b273c73bd9b0e34b067d7d3bd7b9", "not added")
+
     )
+    val advertisement: List<MyItems> = listOf(
+        MyItems.Advertisement(
+            "Lamoda",
+            "https://cdn.forbes.ru/forbes-static/new/2022/02/cropped-lamoda-6213c12d9d803.jpg"
+        ),
+        MyItems.Advertisement(
+            "Ozon",
+            "https://static.tildacdn.com/tild3861-6339-4234-b534-616338663632/Frame_181.png"
+        ),
+        MyItems.Advertisement(
+            "Sinergiya Universiteti",
+            "https://upload.wikimedia.org/wikipedia/commons/1/13/%D0%A1%D0%98%D0%9D%D0%95%D0%A0%D0%93%D0%98%D0%AF_%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%82%D0%B5%D1%82_%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF.png"
+        )
+    )
+
+    fun generateList(size: Int) {
+        val list = dataList
+        var k = 0
+        for (i in 0 until size) {
+            if (i % 6 == 0) {
+                k = 0
+                val item =
+                    advertisement[(advertisement.indices).random()] as MyItems.Advertisement
+                val newItem = item.copy()
+                list.add(newItem)
+            } else {
+                val song =
+                    (songs[k] as MyItems.Song)
+                var newItem = song.copy()
+                newItem.name =newItem.name
+                list.add(newItem)
+            }
+            k++
+        }
+        dataList = list
+
+    }
+
+    fun addItem(position: Int, song: MyItems.Song) {
+        val list = dataList.toMutableList()
+        if (position >= dataList.size - 1) {
+            list.add(song)
+        } else {
+            list.add(position, song)
+            for ( i in position .. dataList.size) {
+                if(list[i] is MyItems.Advertisement && i%6 != 0) {
+                    list[i] = list[i-1].also {
+                        list[i-1] = list[i]
+                    }
+                }
+            }
+        }
+        dataList = list
+    }
+
+    fun deleteItem(context: Context, position: Int) {
+        val list = dataList.toMutableList()
+        list.removeAt(position)
+        for (i in position until dataList.size - 2) {
+            if (list[i] is MyItems.Advertisement && i % 6 != 0) {
+                list[i] = list[i + 1].also {
+                    list[i + 1] = list[i]
+                }
+            }
+            if (list[list.size - 1] is MyItems.Advertisement) {
+                list.removeAt(list.size - 1)
+            }
+        }
+        dataList = list
+    }
 }
